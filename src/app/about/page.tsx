@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About | Jean Gomes",
@@ -150,8 +151,14 @@ export default function About() {
             </p>
           </div>
           <div className="flex justify-center sm:justify-end">
-            <div className="w-44 h-44 rounded-2xl bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center shadow-xl shadow-indigo-200 dark:shadow-indigo-900">
-              <span className="text-6xl font-extrabold text-white select-none">JG</span>
+            <div className="relative w-56 h-64 rounded-2xl overflow-hidden shadow-xl shadow-indigo-200 dark:shadow-indigo-900 ring-4 ring-indigo-100 dark:ring-indigo-900">
+              <Image
+                src="/profile.jpg"
+                alt="Jean Gomes"
+                fill
+                className="object-cover object-top"
+                priority
+              />
             </div>
           </div>
         </div>

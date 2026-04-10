@@ -4,6 +4,8 @@ import { useState } from "react";
 import { useLang } from "@/context/LanguageContext";
 import t from "@/lib/translations";
 
+const FORM_ENDPOINT = "https://formspree.io/f/mykbqvnn";
+
 const contactInfo = [
   { key: "email" as const, value: "jeangomes.dev@outlook.com", href: "mailto:jeangomes.dev@outlook.com", icon: "✉" },
   { key: "github" as const, value: "github.com/JeanGomesDev", href: "https://github.com/JeanGomesDev", icon: "⌥" },
@@ -17,14 +19,41 @@ export default function Contact() {
 
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setSent(true);
+    setSubmitting(true);
+    setError(null);
+
+    try {
+      const response = await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          message: form.message,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("O envio falhou");
+      }
+
+      setSent(true);
+      setForm({ name: "", email: "", message: "" });
+    } catch (err) {
+      console.error(err);
+      setError("Erro ao enviar mensagem. Tente novamente mais tarde.");
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -122,11 +151,15 @@ export default function Contact() {
                     className="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition text-sm resize-none"
                   />
                 </div>
+                {error ? (
+                  <p className="text-sm text-red-600 dark:text-red-400">{error}</p>
+                ) : null}
                 <button
                   type="submit"
-                  className="w-full py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition-colors shadow-md shadow-indigo-200 dark:shadow-indigo-900 text-sm"
+                  disabled={submitting}
+                  className="w-full py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition-colors shadow-md shadow-indigo-200 dark:shadow-indigo-900 text-sm disabled:cursor-not-allowed disabled:opacity-60"
                 >
-                  {c.form.send}
+                  {submitting ? "Enviando..." : c.form.send}
                 </button>
               </form>
             )}

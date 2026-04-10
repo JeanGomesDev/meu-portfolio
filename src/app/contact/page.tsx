@@ -14,14 +14,34 @@ export default function Contact() {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    // Replace with real submission logic (e.g., API route or Resend)
     setSent(true);
   }
 
   const contactInfo = [
-    { label: "Email", value: "jean@example.com", icon: "✉" },
-    { label: "GitHub", value: "github.com/jeangomesdev", icon: "⌥" },
-    { label: "Location", value: "Brazil", icon: "◎" },
+    {
+      label: "Email",
+      value: "jeangomes.dev@outlook.com",
+      href: "mailto:jeangomes.dev@outlook.com",
+      icon: "✉",
+    },
+    {
+      label: "GitHub",
+      value: "github.com/JeanGomesDev",
+      href: "https://github.com/JeanGomesDev",
+      icon: "⌥",
+    },
+    {
+      label: "Phone",
+      value: "+353 083 450 2762",
+      href: "tel:+3530834502762",
+      icon: "✆",
+    },
+    {
+      label: "Location",
+      value: "Dublin 8, Ireland",
+      href: null,
+      icon: "◎",
+    },
   ];
 
   return (
@@ -33,40 +53,51 @@ export default function Contact() {
             Get in Touch
           </h1>
           <p className="text-lg text-gray-500 dark:text-gray-400 max-w-lg mx-auto">
-            Have a project in mind or just want to say hi? My inbox is always
-            open.
+            Available for immediate start — on-site or remote opportunities in
+            Ireland. Let&apos;s talk!
           </p>
         </div>
 
         <div className="grid sm:grid-cols-2 gap-8">
           {/* Contact info */}
-          <div className="space-y-5">
+          <div className="space-y-4">
             {contactInfo.map((info) => (
               <div
                 key={info.label}
                 className="flex items-center gap-4 p-5 bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm"
               >
-                <span className="w-10 h-10 flex items-center justify-center rounded-xl bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 text-lg font-bold">
+                <span className="w-10 h-10 flex items-center justify-center rounded-xl bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 text-lg font-bold shrink-0">
                   {info.icon}
                 </span>
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500">
                     {info.label}
                   </p>
-                  <p className="text-sm font-medium text-gray-800 dark:text-gray-200">
-                    {info.value}
-                  </p>
+                  {info.href ? (
+                    <a
+                      href={info.href}
+                      target={info.href.startsWith("http") ? "_blank" : undefined}
+                      rel={info.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                      className="text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:underline"
+                    >
+                      {info.value}
+                    </a>
+                  ) : (
+                    <p className="text-sm font-medium text-gray-800 dark:text-gray-200">
+                      {info.value}
+                    </p>
+                  )}
                 </div>
               </div>
             ))}
 
             <div className="p-6 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl shadow-lg shadow-indigo-200 dark:shadow-indigo-900">
               <p className="text-white font-semibold text-base mb-1">
-                Open to opportunities
+                Open to opportunities · Immediate Start
               </p>
               <p className="text-indigo-100 text-sm leading-relaxed">
-                Currently available for freelance projects and full-time
-                positions. Let&apos;s build something great together!
+                Looking for on-site or remote roles in Ireland. Available right
+                away — let&apos;s build something great together!
               </p>
             </div>
           </div>
@@ -83,7 +114,10 @@ export default function Contact() {
                   Thanks for reaching out. I&apos;ll get back to you soon.
                 </p>
                 <button
-                  onClick={() => { setForm({ name: "", email: "", message: "" }); setSent(false); }}
+                  onClick={() => {
+                    setForm({ name: "", email: "", message: "" });
+                    setSent(false);
+                  }}
                   className="mt-2 text-sm text-indigo-600 dark:text-indigo-400 font-medium hover:underline"
                 >
                   Send another message
@@ -141,7 +175,7 @@ export default function Contact() {
                     required
                     value={form.message}
                     onChange={handleChange}
-                    placeholder="Tell me about your project..."
+                    placeholder="Tell me about your project or opportunity..."
                     className="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition text-sm resize-none"
                   />
                 </div>

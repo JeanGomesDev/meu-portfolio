@@ -7,51 +7,68 @@ export const metadata: Metadata = {
 
 const projects = [
   {
-    title: "E-Commerce Platform",
+    title: "Interactive Digital Menu",
+    company: "DGuests",
     description:
-      "Full-stack e-commerce solution with authentication, cart management, and payment integration using Next.js and Stripe.",
-    tags: ["Next.js", "TypeScript", "Prisma", "Stripe"],
-    link: "#",
+      "Dynamic and responsive digital menu system accessible via QR Code, enabling online ordering for restaurants. Features real-time customization so establishments can update products, images, and prices instantly.",
+    highlights: [
+      "QR Code access with real-time product customization",
+      "Next.js SSR for fast loading and better Google indexing",
+      "Lazy Loading & Core Web Vitals optimization",
+    ],
+    tags: ["Next.js", "React", "Styled Components", "Node.js", "MySQL", "SSR"],
     featured: true,
   },
   {
-    title: "Task Management App",
+    title: "Admin Dashboard",
+    company: "DGuests",
     description:
-      "Collaborative project management tool with real-time updates, drag-and-drop boards, and team collaboration features.",
-    tags: ["React", "Node.js", "Socket.io", "PostgreSQL"],
-    link: "#",
+      "Modular admin panel for the restaurant industry with order management, payment monitoring, and analytical reports. Integrated with payment APIs for real-time transaction and cash flow visibility.",
+    highlights: [
+      "Interactive charts with Recharts & Chart.js",
+      "Real-time payment and transaction monitoring",
+      "Modular architecture for order, payment, and report management",
+    ],
+    tags: ["React", "Node.js", "Express", "MySQL", "MongoDB", "Recharts", "Chart.js"],
     featured: true,
   },
   {
-    title: "Developer Portfolio",
+    title: "Payment Integration",
+    company: "DGuests",
     description:
-      "Personal portfolio built with Next.js and Tailwind CSS featuring a modern design, dark mode, and fast performance.",
-    tags: ["Next.js", "Tailwind CSS", "TypeScript"],
-    link: "#",
+      "Secure payment system supporting multiple payment methods. Implemented authentication and transaction validation mechanisms to ensure secure and traceable payments.",
+    highlights: [
+      "Stripe & Mercado Pago integration",
+      "Supports credit cards, bank slips (boleto), and Pix",
+      "Authentication and transaction validation",
+    ],
+    tags: ["Stripe", "Mercado Pago", "Node.js", "Express", "AWS Lambda", "Serverless"],
+    featured: true,
+  },
+  {
+    title: "Agency Websites & Landing Pages",
+    company: "AGO7 Agency",
+    description:
+      "Built and maintained institutional websites and lead capture pages for agency clients. Focused on performance, responsive layouts, and SEO best practices.",
+    highlights: [
+      "Responsive landing pages with high conversion focus",
+      "SEO optimization and performance improvements",
+      "Regular library updates and technical maintenance",
+    ],
+    tags: ["Next.js", "React", "Tailwind CSS", "Styled Components", "Vercel", "SEO"],
     featured: false,
   },
   {
-    title: "REST API Service",
+    title: "Frontend Team Coordination",
+    company: "AGO7 Agency",
     description:
-      "Scalable REST API with JWT authentication, rate limiting, and full documentation. Deployed on Docker.",
-    tags: ["Node.js", "Express", "Docker", "MongoDB"],
-    link: "#",
-    featured: false,
-  },
-  {
-    title: "Weather Dashboard",
-    description:
-      "Real-time weather dashboard integrating multiple APIs with charts, geolocation, and 7-day forecasts.",
-    tags: ["React", "Chart.js", "OpenWeather API"],
-    link: "#",
-    featured: false,
-  },
-  {
-    title: "Blog CMS",
-    description:
-      "Headless CMS-powered blog with MDX support, syntax highlighting, and full-text search.",
-    tags: ["Next.js", "MDX", "Contentful"],
-    link: "#",
+      "Took on technical coordination of the frontend workflow alongside active development. Organized team tasks, aligned with backend, and mentored junior developers.",
+    highlights: [
+      "Structured task assignment for organized delivery",
+      "Aligned technical flows between frontend and backend teams",
+      "Code review and mentoring for junior developers",
+    ],
+    tags: ["Next.js", "TypeScript", "GitHub", "Node.js", "Jest", "Cypress"],
     featured: false,
   },
 ];
@@ -69,8 +86,8 @@ export default function Projects() {
             My Projects
           </h1>
           <p className="text-lg text-gray-500 dark:text-gray-400 max-w-xl mx-auto">
-            A collection of things I&apos;ve built — from side projects to
-            production applications.
+            A selection of work from my experience at DGuests and AGO7 Agency —
+            from full-stack systems to frontend coordination.
           </p>
         </div>
 
@@ -79,24 +96,31 @@ export default function Projects() {
           <h2 className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-6">
             Featured
           </h2>
-          <div className="grid sm:grid-cols-2 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {featured.map((project) => (
-              <a
+              <div
                 key={project.title}
-                href={project.link}
-                className="group block p-8 bg-white dark:bg-gray-900 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-md hover:border-indigo-200 dark:hover:border-indigo-800 transition-all"
+                className="flex flex-col p-8 bg-white dark:bg-gray-900 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-md hover:border-indigo-200 dark:hover:border-indigo-800 transition-all"
               >
-                <div className="flex items-start justify-between mb-3">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                    {project.title}
-                  </h3>
-                  <span className="text-indigo-600 dark:text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity text-xl">
-                    →
+                <div className="mb-3">
+                  <span className="text-xs font-semibold text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950 px-3 py-1 rounded-full">
+                    {project.company}
                   </span>
                 </div>
-                <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-5">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                  {project.title}
+                </h3>
+                <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-4">
                   {project.description}
                 </p>
+                <ul className="space-y-1 mb-5 flex-1">
+                  {project.highlights.map((h) => (
+                    <li key={h} className="flex items-start gap-2 text-sm text-gray-500 dark:text-gray-400">
+                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-indigo-500 shrink-0" />
+                      {h}
+                    </li>
+                  ))}
+                </ul>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
                     <span
@@ -107,7 +131,7 @@ export default function Projects() {
                     </span>
                   ))}
                 </div>
-              </a>
+              </div>
             ))}
           </div>
         </section>
@@ -115,24 +139,23 @@ export default function Projects() {
         {/* Other projects */}
         <section>
           <h2 className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-6">
-            Other Projects
+            Other Work
           </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid sm:grid-cols-2 gap-5">
             {rest.map((project) => (
-              <a
+              <div
                 key={project.title}
-                href={project.link}
-                className="group block p-6 bg-white dark:bg-gray-900 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-md hover:border-indigo-200 dark:hover:border-indigo-800 transition-all"
+                className="flex flex-col p-6 bg-white dark:bg-gray-900 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-md hover:border-indigo-200 dark:hover:border-indigo-800 transition-all"
               >
-                <div className="flex items-start justify-between mb-2">
-                  <h3 className="text-base font-bold text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                    {project.title}
-                  </h3>
-                  <span className="text-indigo-600 dark:text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity">
-                    →
+                <div className="mb-2">
+                  <span className="text-xs font-semibold text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950 px-3 py-1 rounded-full">
+                    {project.company}
                   </span>
                 </div>
-                <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-4">
+                <h3 className="text-base font-bold text-gray-900 dark:text-white mb-2">
+                  {project.title}
+                </h3>
+                <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-4 flex-1">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2">
@@ -145,7 +168,7 @@ export default function Projects() {
                     </span>
                   ))}
                 </div>
-              </a>
+              </div>
             ))}
           </div>
         </section>

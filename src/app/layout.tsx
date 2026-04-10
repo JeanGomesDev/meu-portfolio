@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Jean Gomes | Full-Stack Developer",
+  title: "Jean Gomes | Full Stack Developer",
   description:
-    "Personal portfolio of Jean Gomes — Full-Stack Developer passionate about building great web applications.",
+    "Full Stack Developer focused on Front-End based in Dublin, Ireland. React.js, Next.js, Node.js, Serverless, Performance & SEO.",
 };
 
 export default function RootLayout({

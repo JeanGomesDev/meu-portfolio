@@ -1,0 +1,161 @@
+"use client";
+
+import { useState } from "react";
+
+export default function Contact() {
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [sent, setSent] = useState(false);
+
+  function handleChange(
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) {
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  }
+
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    // Replace with real submission logic (e.g., API route or Resend)
+    setSent(true);
+  }
+
+  const contactInfo = [
+    { label: "Email", value: "jean@example.com", icon: "✉" },
+    { label: "GitHub", value: "github.com/jeangomesdev", icon: "⌥" },
+    { label: "Location", value: "Brazil", icon: "◎" },
+  ];
+
+  return (
+    <main className="min-h-screen pt-24 pb-16 px-6 bg-gray-50 dark:bg-gray-950">
+      <div className="max-w-5xl mx-auto">
+        {/* Header */}
+        <div className="mb-12 text-center">
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">
+            Get in Touch
+          </h1>
+          <p className="text-lg text-gray-500 dark:text-gray-400 max-w-lg mx-auto">
+            Have a project in mind or just want to say hi? My inbox is always
+            open.
+          </p>
+        </div>
+
+        <div className="grid sm:grid-cols-2 gap-8">
+          {/* Contact info */}
+          <div className="space-y-5">
+            {contactInfo.map((info) => (
+              <div
+                key={info.label}
+                className="flex items-center gap-4 p-5 bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm"
+              >
+                <span className="w-10 h-10 flex items-center justify-center rounded-xl bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 text-lg font-bold">
+                  {info.icon}
+                </span>
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500">
+                    {info.label}
+                  </p>
+                  <p className="text-sm font-medium text-gray-800 dark:text-gray-200">
+                    {info.value}
+                  </p>
+                </div>
+              </div>
+            ))}
+
+            <div className="p-6 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl shadow-lg shadow-indigo-200 dark:shadow-indigo-900">
+              <p className="text-white font-semibold text-base mb-1">
+                Open to opportunities
+              </p>
+              <p className="text-indigo-100 text-sm leading-relaxed">
+                Currently available for freelance projects and full-time
+                positions. Let&apos;s build something great together!
+              </p>
+            </div>
+          </div>
+
+          {/* Contact form */}
+          <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm p-8">
+            {sent ? (
+              <div className="h-full flex flex-col items-center justify-center text-center gap-3">
+                <span className="text-5xl">✓</span>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                  Message sent!
+                </h3>
+                <p className="text-gray-500 dark:text-gray-400 text-sm">
+                  Thanks for reaching out. I&apos;ll get back to you soon.
+                </p>
+                <button
+                  onClick={() => { setForm({ name: "", email: "", message: "" }); setSent(false); }}
+                  className="mt-2 text-sm text-indigo-600 dark:text-indigo-400 font-medium hover:underline"
+                >
+                  Send another message
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div>
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5"
+                  >
+                    Name
+                  </label>
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    required
+                    value={form.name}
+                    onChange={handleChange}
+                    placeholder="Your name"
+                    className="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition text-sm"
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5"
+                  >
+                    Email
+                  </label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    value={form.email}
+                    onChange={handleChange}
+                    placeholder="your@email.com"
+                    className="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition text-sm"
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5"
+                  >
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={5}
+                    required
+                    value={form.message}
+                    onChange={handleChange}
+                    placeholder="Tell me about your project..."
+                    className="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition text-sm resize-none"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="w-full py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition-colors shadow-md shadow-indigo-200 dark:shadow-indigo-900 text-sm"
+                >
+                  Send Message
+                </button>
+              </form>
+            )}
+          </div>
+        </div>
+      </div>
+    </main>
+  );
+}

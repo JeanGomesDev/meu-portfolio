@@ -127,7 +127,7 @@ const t = {
     },
     projects: {
       title: "My Projects",
-      subtitle: "A selection of work from my experience at DGuests and AGO7 Agency from full-stack systems to frontend coordination.",
+      subtitle: "A selection of work from my experience at DGuests and AGO7 Agency as a Front-End Developer and Full-Stack Developer.",
       featuredLabel: "Featured",
       otherLabel: "Other Work",
       items: [
@@ -322,7 +322,7 @@ const t = {
     },
     projects: {
       title: "Meus Projetos",
-      subtitle: "Uma seleção de trabalhos da minha experiência na DGuests e AGO7 Agency de sistemas full stack à coordenação de frontend.",
+      subtitle: "Uma seleção de trabalhos da minha experiência na DGuests e AGO7 Agency como Front-End Developer e Full-Stack Developer.",
       featuredLabel: "Destaque",
       otherLabel: "Outros Trabalhos",
       items: [

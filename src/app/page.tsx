@@ -1,20 +1,38 @@
 import Link from "next/link";
 
+const techStack = [
+  "React.js", "Next.js", "TypeScript", "JavaScript",
+  "Tailwind CSS", "Styled Components", "Node.js", "Express",
+  "AWS Lambda", "Serverless", "MySQL", "MongoDB",
+  "Jest", "Cypress", "Stripe", "Vercel",
+];
+
+const stats = [
+  { number: "4+", label: "Years of Experience" },
+  { number: "2", label: "Companies" },
+  { number: "10+", label: "Projects Delivered" },
+];
+
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen">
       {/* Hero */}
       <section className="flex flex-1 flex-col items-center justify-center text-center px-6 pt-24 pb-16 bg-gradient-to-b from-indigo-50 to-white dark:from-gray-950 dark:to-gray-900">
-        <span className="inline-block mb-4 px-3 py-1 text-xs font-semibold tracking-widest uppercase text-indigo-600 dark:text-indigo-400 bg-indigo-100 dark:bg-indigo-950 rounded-full">
-          Available for work
+        <span className="inline-block mb-4 px-3 py-1 text-xs font-semibold tracking-widest uppercase text-green-700 dark:text-green-400 bg-green-100 dark:bg-green-950 rounded-full">
+          Available · Immediate Start
         </span>
         <h1 className="text-5xl sm:text-6xl font-extrabold text-gray-900 dark:text-white leading-tight mb-4">
           Hi, I&apos;m{" "}
           <span className="text-indigo-600 dark:text-indigo-400">Jean Gomes</span>
         </h1>
-        <p className="max-w-xl text-xl text-gray-500 dark:text-gray-400 mb-10 leading-relaxed">
-          Full-Stack Developer passionate about building beautiful, performant
-          web applications with modern technologies.
+        <p className="max-w-2xl text-xl text-gray-500 dark:text-gray-400 mb-3 leading-relaxed">
+          Full Stack Developer focused on Front-End
+        </p>
+        <p className="max-w-2xl text-base text-gray-400 dark:text-gray-500 mb-4 leading-relaxed">
+          React.js · Next.js · Node.js · Serverless · Performance · SEO & Integrations
+        </p>
+        <p className="text-sm text-gray-400 dark:text-gray-500 mb-10 flex items-center gap-1">
+          <span>📍</span> Dublin 8, Ireland
         </p>
         <div className="flex flex-wrap gap-4 justify-center">
           <Link
@@ -39,28 +57,22 @@ export default function Home() {
             Technologies I work with
           </p>
           <div className="flex flex-wrap justify-center gap-3">
-            {["Next.js", "React", "TypeScript", "Tailwind CSS", "Node.js", "PostgreSQL", "Docker", "Git"].map(
-              (tech) => (
-                <span
-                  key={tech}
-                  className="px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm font-medium"
-                >
-                  {tech}
-                </span>
-              )
-            )}
+            {techStack.map((tech) => (
+              <span
+                key={tech}
+                className="px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm font-medium"
+              >
+                {tech}
+              </span>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Featured section */}
+      {/* Stats */}
       <section className="py-16 px-6 bg-gray-50 dark:bg-gray-950">
         <div className="max-w-4xl mx-auto grid sm:grid-cols-3 gap-6 text-center">
-          {[
-            { number: "10+", label: "Projects Completed" },
-            { number: "3+", label: "Years of Experience" },
-            { number: "5+", label: "Happy Clients" },
-          ].map((stat) => (
+          {stats.map((stat) => (
             <div
               key={stat.label}
               className="p-8 bg-white dark:bg-gray-900 rounded-2xl shadow-sm"

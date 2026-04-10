@@ -153,10 +153,10 @@ export default function About() {
           <div className="flex justify-center sm:justify-end">
             <div className="relative w-56 h-64 rounded-2xl overflow-hidden shadow-xl shadow-indigo-200 dark:shadow-indigo-900 ring-4 ring-indigo-100 dark:ring-indigo-900">
               <Image
-                src="/profile.jpg"
+                src="/photo_Jean.jpeg"
                 alt="Jean Gomes"
                 fill
-                className="object-cover object-top"
+                className="object-cover "
                 priority
               />
             </div>

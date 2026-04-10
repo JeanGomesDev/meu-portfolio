@@ -8,7 +8,7 @@ const t = {
       downloadCV: "Download CV",
     },
     home: {
-      badge: "Available · Immediate Start",
+      badge: "Available",
       title: "Hi, I'm",
       subtitle: "Full Stack Developer focused on Front-End",
       tagline: "React.js · Next.js · Node.js · Serverless · Performance · SEO & Integrations",
@@ -26,9 +26,9 @@ const t = {
     about: {
       title: "About Me",
       bio: [
-        "I'm a Full Stack Developer focused on Front-End, passionate about building modern, fast, and scalable interfaces. I have experience in full projects — from responsive landing pages to admin systems with payment integrations — always focused on performance, clean code, and user experience.",
+        "I'm a Full Stack Developer focused on Front-End, passionate about building modern, fast, and scalable interfaces. I have experience in full projects, from responsive landing pages to admin systems with payment integrations, always focused on performance, clean code, and user experience.",
         "Currently working remotely for AGO7, a digital agency, and looking for new on-site or remote opportunities in Ireland to grow professionally and culturally.",
-        "Always learning — currently studying mobile development with Flutter and software architecture best practices.",
+        "Always learning, currently studying mobile development with Flutter and software architecture best practices.",
       ],
       languagesTitle: "Languages",
       languages: [
@@ -79,7 +79,7 @@ const t = {
           company: "DGuests",
           type: "Full-time · On-site",
           period: "August 2023 – April 2025",
-          description: "Developed web solutions for the restaurant industry, creating modern, responsive, and scalable interfaces — from interactive digital menus to admin dashboards with payment integrations.",
+          description: "Developed web solutions for the restaurant industry, creating modern, responsive, and scalable interfaces, from interactive digital menus to admin dashboards with payment integrations.",
           highlights: [
             "Built a dynamic QR Code menu system with real-time customization using Next.js SSR.",
             "Developed a modular admin dashboard with interactive charts (Recharts & Chart.js).",
@@ -127,7 +127,7 @@ const t = {
     },
     projects: {
       title: "My Projects",
-      subtitle: "A selection of work from my experience at DGuests and AGO7 Agency — from full-stack systems to frontend coordination.",
+      subtitle: "A selection of work from my experience at DGuests and AGO7 Agency from full-stack systems to frontend coordination.",
       featuredLabel: "Featured",
       otherLabel: "Other Work",
       items: [
@@ -175,9 +175,9 @@ const t = {
     },
     contact: {
       title: "Get in Touch",
-      subtitle: "Available for immediate start — on-site or remote opportunities in Ireland. Let's talk!",
+      subtitle: "Available for immediate start, on-site or remote opportunities in Ireland. Let's talk!",
       availableTitle: "Open to opportunities · Immediate Start",
-      availableText: "Looking for on-site or remote roles in Ireland. Available right away — let's build something great together!",
+      availableText: "Looking for on-site or remote roles in Ireland. Available right away, let's build something great together!",
       form: {
         name: "Name",
         namePlaceholder: "Your name",
@@ -203,7 +203,7 @@ const t = {
       downloadCV: "Baixar CV",
     },
     home: {
-      badge: "Disponível · Início Imediato",
+      badge: "Disponível",
       title: "Olá, eu sou",
       subtitle: "Desenvolvedor Full Stack com foco em Front-End",
       tagline: "React.js · Next.js · Node.js · Serverless · Performance · SEO & Integrações",
@@ -221,9 +221,9 @@ const t = {
     about: {
       title: "Sobre Mim",
       bio: [
-        "Sou Desenvolvedor Full Stack com foco em Front-End, apaixonado por construir interfaces modernas, rápidas e escaláveis. Tenho experiência em projetos completos — de landing pages responsivas a sistemas administrativos com integrações de pagamento — sempre focado em performance, código limpo e experiência do usuário.",
+        "Sou Desenvolvedor Full Stack com foco em Front-End, apaixonado por construir interfaces modernas, rápidas e escaláveis. Tenho experiência em projetos completos, de landing pages responsivas a sistemas administrativos com integrações de pagamento, sempre focado em performance, código limpo e experiência do usuário.",
         "Atualmente trabalhando remotamente na AGO7, uma agência digital, e em busca de novas oportunidades presenciais ou remotas na Irlanda para crescer profissional e culturalmente.",
-        "Sempre aprendendo — atualmente estudando desenvolvimento mobile com Flutter e boas práticas de arquitetura de software.",
+        "Sempre aprendendo, atualmente estudando desenvolvimento mobile com Flutter e boas práticas de arquitetura de software.",
       ],
       languagesTitle: "Idiomas",
       languages: [
@@ -274,7 +274,7 @@ const t = {
           company: "DGuests",
           type: "Tempo Integral · Presencial",
           period: "Agosto 2023 – Abril 2025",
-          description: "Desenvolvi soluções web para o setor de restaurantes, criando interfaces modernas, responsivas e escaláveis — de cardápios digitais interativos a dashboards administrativos com integração de pagamentos.",
+          description: "Desenvolvi soluções web para o setor de restaurantes, criando interfaces modernas, responsivas e escaláveis, de cardápios digitais interativos a dashboards administrativos com integração de pagamentos.",
           highlights: [
             "Construí um sistema de cardápio via QR Code com personalização em tempo real usando SSR do Next.js.",
             "Desenvolvi um painel administrativo modular com gráficos interativos (Recharts & Chart.js).",
@@ -322,7 +322,7 @@ const t = {
     },
     projects: {
       title: "Meus Projetos",
-      subtitle: "Uma seleção de trabalhos da minha experiência na DGuests e AGO7 Agency — de sistemas full stack à coordenação de frontend.",
+      subtitle: "Uma seleção de trabalhos da minha experiência na DGuests e AGO7 Agency de sistemas full stack à coordenação de frontend.",
       featuredLabel: "Destaque",
       otherLabel: "Outros Trabalhos",
       items: [
@@ -370,9 +370,9 @@ const t = {
     },
     contact: {
       title: "Entre em Contato",
-      subtitle: "Disponível para início imediato — oportunidades presenciais ou remotas na Irlanda. Vamos conversar!",
+      subtitle: "Disponível para início imediato, oportunidades presenciais ou remotas na Irlanda. Vamos conversar!",
       availableTitle: "Aberto a oportunidades · Início Imediato",
-      availableText: "Buscando vagas presenciais ou remotas na Irlanda. Disponível imediatamente — vamos construir algo incrível juntos!",
+      availableText: "Buscando vagas presenciais ou remotas na Irlanda. Disponível imediatamente, vamos construir algo incrível juntos!",
       form: {
         name: "Nome",
         namePlaceholder: "Seu nome",

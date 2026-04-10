@@ -51,9 +51,9 @@ export default function Navbar() {
             className="flex items-center gap-1 px-3 py-1.5 rounded-lg border border-gray-200 dark:border-gray-700 text-xs font-bold text-gray-600 dark:text-gray-400 hover:border-indigo-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
             title={lang === "en" ? "Switch to Portuguese" : "Mudar para Inglês"}
           >
-            <span className={lang === "en" ? "text-indigo-600 dark:text-indigo-400" : "text-gray-400"}>EN</span>
+            <span className={lang === "en" ? "text-indigo-600 dark:text-indigo-400" : "text-gray-400 cursor-pointer"}>EN</span>
             <span className="text-gray-300 dark:text-gray-600">|</span>
-            <span className={lang === "pt" ? "text-indigo-600 dark:text-indigo-400" : "text-gray-400"}>PT</span>
+            <span className={lang === "pt" ? "text-indigo-600 dark:text-indigo-400" : "text-gray-400 cursor-pointer"}>PT-BR</span>
           </button>
 
           {/* Download CV */}

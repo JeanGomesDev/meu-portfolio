@@ -10,7 +10,6 @@ export default function Home() {
 
   return (
     <main className="flex flex-col min-h-screen">
-      {/* Hero */}
       <section className="flex flex-1 flex-col items-center justify-center text-center px-6 pt-24 pb-16 bg-gradient-to-b from-indigo-50 to-white dark:from-gray-950 dark:to-gray-900">
         <span className="inline-block mb-4 px-3 py-1 text-xs font-semibold tracking-widest uppercase text-green-700 dark:text-green-400 bg-green-100 dark:bg-green-950 rounded-full">
           {h.badge}
@@ -55,7 +54,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Tech stack */}
       <section className="py-16 px-6 bg-white dark:bg-gray-900">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-8">
@@ -71,8 +69,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="py-16 px-6 bg-gray-50 dark:bg-gray-950">
+      {/* <section className="py-16 px-6 bg-gray-50 dark:bg-gray-950">
         <div className="max-w-4xl mx-auto grid sm:grid-cols-3 gap-6 text-center">
           {h.stats.map((stat) => (
             <div key={stat.label} className="p-8 bg-white dark:bg-gray-900 rounded-2xl shadow-sm">
@@ -85,7 +82,7 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
     </main>
   );
 }

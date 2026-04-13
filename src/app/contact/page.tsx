@@ -4,8 +4,6 @@ import { useState } from "react";
 import { useLang } from "@/context/LanguageContext";
 import t from "@/lib/translations";
 
-const FORM_ENDPOINT = "https://formspree.io/f/mykbqvnn";
-
 const contactInfo = [
   { key: "email" as const, value: "jeangomes.dev@outlook.com", href: "mailto:jeangomes.dev@outlook.com", icon: "✉" },
   { key: "github" as const, value: "github.com/JeanGomesDev", href: "https://github.com/JeanGomesDev", icon: "⌥" },
@@ -32,7 +30,7 @@ export default function Contact() {
     setError(null);
 
     try {
-      const response = await fetch(FORM_ENDPOINT, {
+      const response = await fetch(process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT!, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

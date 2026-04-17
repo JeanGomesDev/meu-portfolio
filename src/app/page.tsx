@@ -68,21 +68,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* <section className="py-16 px-6 bg-gray-50 dark:bg-gray-950">
-        <div className="max-w-4xl mx-auto grid sm:grid-cols-3 gap-6 text-center">
-          {h.stats.map((stat) => (
-            <div key={stat.label} className="p-8 bg-white dark:bg-gray-900 rounded-2xl shadow-sm">
-              <p className="text-4xl font-extrabold text-indigo-600 dark:text-indigo-400 mb-1">
-                {stat.number}
-              </p>
-              <p className="text-gray-500 dark:text-gray-400 text-sm font-medium">
-                {stat.label}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section> */}
     </main>
   );
 }

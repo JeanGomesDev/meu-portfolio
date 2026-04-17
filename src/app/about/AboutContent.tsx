@@ -12,7 +12,6 @@ export default function AboutContent() {
     <main className="min-h-screen pt-24 pb-16 px-6 bg-gray-50 dark:bg-gray-950">
       <div className="max-w-4xl mx-auto">
 
-        {/* Header */}
         <div className="mb-16 grid sm:grid-cols-2 gap-10 items-center">
           <div>
             <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">
@@ -37,7 +36,6 @@ export default function AboutContent() {
           </div>
         </div>
 
-        {/* Languages */}
         <section className="mb-14">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">{a.languagesTitle}</h2>
           <div className="grid sm:grid-cols-2 gap-4">
@@ -55,7 +53,6 @@ export default function AboutContent() {
           </div>
         </section>
 
-        {/* Skills */}
         <section className="mb-14">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">{a.skillsTitle}</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -77,7 +74,6 @@ export default function AboutContent() {
           </div>
         </section>
 
-        {/* Experience */}
         <section className="mb-14">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">{a.experienceTitle}</h2>
           <div className="relative border-l-2 border-gray-200 dark:border-gray-800 pl-8 space-y-10">
@@ -113,7 +109,6 @@ export default function AboutContent() {
           </div>
         </section>
 
-        {/* Education */}
         <section>
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">{a.educationTitle}</h2>
           <div className="space-y-4">

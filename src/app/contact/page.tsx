@@ -37,7 +37,7 @@ export default function Contact() {
           name: form.name,
           email: form.email,
           message: form.message,
-        }),
+        }), 
       });
 
       if (!response.ok) {
@@ -67,7 +67,6 @@ export default function Contact() {
         </div>
 
         <div className="grid sm:grid-cols-2 gap-8">
-          {/* Contact info */}
           <div className="space-y-4">
             {contactInfo.map((info) => (
               <div key={info.key} className="flex items-center gap-4 p-5 bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm">
@@ -100,7 +99,6 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Contact form */}
           <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm p-8">
             {sent ? (
               <div className="h-full flex flex-col items-center justify-center text-center gap-3">
